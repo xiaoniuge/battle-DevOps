@@ -21,6 +21,18 @@ const columns = [
     key: 'address',
     component: <Input />,
   },
+  {
+    title: '住址',
+    dataIndex: 'address1',
+    key: 'address1',
+    component: <Input />,
+  },
+  {
+    title: '住址',
+    dataIndex: 'address2',
+    key: 'address2',
+    component: <Input />,
+  },
 ];
 
 export default (props) => {
@@ -28,14 +40,11 @@ export default (props) => {
     <>
       <Table
         columns={columns}
-        actions={
-          <Space>
-            <Button type="primary" icon={<MyIcon type="icon-plus" style={{ color: 'white' }} />}>
-              新建
-            </Button>
-            <Button icon={<MyIcon type="icon-refresh" />}></Button>
-          </Space>
-        }
+        needSearch={true}
+        onSearch={(values) => console.log(values)}
+        initialValues={{}}
+        needCreate={true}
+        needRefresh={true}
       />
     </>
   );
