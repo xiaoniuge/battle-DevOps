@@ -36,15 +36,40 @@ const columns = [
 ];
 
 export default (props) => {
+  const [drawerVisible, setDrawerVisible] = useState(false);
+  const [drawerFooterVisible, setDrawerFooterVisible] = useState(false);
+  const [drawerTitle, setDrawerTitle] = useState('创建项目');
   return (
     <>
       <Table
         columns={columns}
-        needSearch={true}
-        onSearch={(values) => console.log(values)}
         initialValues={{}}
+        needSearch={true}
         needCreate={true}
         needRefresh={true}
+        needSetting={true}
+        needFullScreen={true}
+        needCustomSize={true}
+        drawerTitle={drawerTitle}
+        drawerVisible={drawerVisible}
+        drawerChildren={<span>600</span>}
+        drawerFooterVisible={drawerFooterVisible}
+        drawerWidth={600}
+        onSearch={(values) => console.log(values)}
+        onCreateClick={() => {
+          setDrawerVisible(true);
+          setDrawerFooterVisible(true);
+          setDrawerTitle('创建项目');
+        }}
+        onOk={() => {
+          setDrawerVisible(false);
+          setDrawerTitle('创建项目');
+        }}
+        onClose={() => {
+          setDrawerVisible(false);
+          setDrawerTitle('创建项目');
+        }}
+        onRefresh={() => console.log('onRefresh')}
       />
     </>
   );
