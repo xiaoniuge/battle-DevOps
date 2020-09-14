@@ -1,6 +1,5 @@
 import { Card } from 'antd';
-import { useState } from 'react';
-import { BaseInfo } from './component';
+import { BaseInfo, DatabaseServerUseInfo } from './component';
 import styles from './index.scss';
 
 export default (props) => {
@@ -10,6 +9,13 @@ export default (props) => {
         <div className={styles.baseInfoLayout}>
           <BaseInfo />
         </div>
+      </Card>
+      <Card
+        title="数据量（万）"
+        bodyStyle={{ borderRadius: 8 }}
+        className={styles.databaseServerUseInfoLayout}
+      >
+        <DatabaseServerUseInfo />
       </Card>
     </>
   );

@@ -1,1 +1,2 @@
-export { default as BaseInfo } from './base';
+export { default as BaseInfo } from './Base';
+export { default as DatabaseServerUseInfo } from './DatabaseServerUseInfo';
