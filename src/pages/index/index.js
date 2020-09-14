@@ -114,12 +114,17 @@ export default (props) => {
             }}
           />
           <div style={{ padding: 16 }}>
-            <Card
-              className={styles.layoutContent}
-              bodyStyle={{ minHeight: window.innerHeight - 220 }}
-            >
-              {props.children}
-            </Card>
+            {props.location.pathname.indexOf('/dashboard') !== -1 ||
+            props.location.pathname === '/home' ? (
+              props.children
+            ) : (
+              <Card
+                className={styles.layoutContent}
+                bodyStyle={{ minHeight: window.innerHeight - 220 }}
+              >
+                {props.children}
+              </Card>
+            )}
           </div>
         </Content>
       </Layout>

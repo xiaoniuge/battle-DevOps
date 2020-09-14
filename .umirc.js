@@ -18,22 +18,30 @@ export default {
             {
               path: '/home',
               component: '@/pages/home/index',
-              title: '首页',
             },
             {
-              path: '/organization',
+              path: '/dashboard/analysis',
+              component: '@/pages/analysis/index',
+            },
+            {
+              path: '/system/organization',
               component: '@/pages/organization/index',
-              title: '组织管理',
             },
             {
-              path: '/project',
+              path: '/system/project',
               component: '@/pages/project/index',
-              title: '项目管理',
             },
             {
-              path: '/setting',
+              path: '/system/application',
+              component: '@/pages/application/index',
+            },
+            {
+              path: '/system/server',
+              component: '@/pages/server/index',
+            },
+            {
+              path: '/system/setting',
               component: '@/pages/setting/index',
-              title: '设置',
             },
           ],
         },

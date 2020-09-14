@@ -57,7 +57,7 @@ export default ({
   const getCurrentMenuTitle = (routes, path) => {
     let menuTitle = '';
     for (let i = 0; i < routes.length; i++) {
-      if (routes[i].chidren) {
+      if (routes[i].chidren && menuTitle === '') {
         menuTitle = getCurrentMenuTitle(routes[i].chidren, path);
       } else {
         if (path === routes[i].path) {
@@ -138,26 +138,45 @@ const menuData = [
     chidren: null,
   },
   {
-    path: '/organization',
-    name: '组织信息',
-    icon: 'icon-file',
-    chidren: null,
-  },
-  {
-    path: '/project',
-    name: '项目管理',
-    icon: 'icon-project',
-    chidren: null,
+    path: '/dashboard',
+    name: 'Dashboard',
+    icon: 'icon-dashboard',
+    chidren: [
+      {
+        path: '/dashboard/analysis',
+        name: '分析页',
+        icon: 'icon-analysis',
+        chidren: null,
+      },
+    ],
   },
   {
     path: '/system',
-    name: '设置',
-    icon: 'icon-system',
+    name: '控制台',
+    icon: 'icon-control',
     chidren: [
       {
-        path: '/setting',
-        name: '设置',
-        icon: 'icon-system',
+        path: '/system/organization',
+        name: '组织信息',
+        icon: 'icon-organization',
+        chidren: null,
+      },
+      {
+        path: '/system/project',
+        name: '项目管理',
+        icon: 'icon-project',
+        chidren: null,
+      },
+      {
+        path: '/system/application',
+        name: '应用管理',
+        icon: 'icon-Application',
+        chidren: null,
+      },
+      {
+        path: '/system/server',
+        name: '服务器管理',
+        icon: 'icon-server',
         chidren: null,
       },
     ],

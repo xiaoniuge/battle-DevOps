@@ -189,7 +189,7 @@ export default ({
             ) : null}
             {needSetting && columns && columns.length !== 0 && needSearch ? (
               <Popover
-                placement="bottom"
+                placement="bottomLeft"
                 destroyTooltipOnHide={{ keepParent: false }}
                 trigger="click"
                 getPopupContainer={() => searchSettingContainer.current}
