@@ -4,7 +4,7 @@ export default {
     { path: '/', redirect: '/login' },
     {
       path: '/login',
-      component: '@/pages/index', // 登录页
+      component: '@/pages/login/index', // 登录页
       title: '登录',
     },
     {
@@ -18,30 +18,43 @@ export default {
             {
               path: '/home',
               component: '@/pages/home/index',
+              title: '首页',
             },
             {
               path: '/dashboard/analysis',
-              component: '@/pages/analysis/index',
+              component: '@/pages/dashboard/analysis/index',
+              title: '分析页',
             },
             {
-              path: '/system/organization',
-              component: '@/pages/organization/index',
+              path: '/control/organization',
+              component: '@/pages/control/organization/index',
+              title: '组织管理',
             },
             {
-              path: '/system/project',
-              component: '@/pages/project/index',
+              path: '/control/project',
+              component: '@/pages/control/project/index',
+              title: '项目管理',
             },
             {
-              path: '/system/application',
-              component: '@/pages/application/index',
+              path: '/control/application',
+              component: '@/pages/control/application/index',
+              title: '应用管理',
             },
             {
-              path: '/system/server',
-              component: '@/pages/server/index',
+              path: '/control/store',
+              title: '仓库管理',
+              routes: [
+                {
+                  path: '/control/store/code',
+                  component: '@/pages/control/store/code/index',
+                  title: '代码库',
+                },
+              ],
             },
             {
-              path: '/system/setting',
-              component: '@/pages/setting/index',
+              path: '/control/server',
+              component: '@/pages/control/server/index',
+              title: '服务器管理',
             },
           ],
         },

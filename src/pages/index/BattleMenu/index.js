@@ -151,30 +151,43 @@ const menuData = [
     ],
   },
   {
-    path: '/system',
+    path: '/control',
     name: '控制台',
     icon: 'icon-control',
     chidren: [
       {
-        path: '/system/organization',
+        path: '/control/organization',
         name: '组织信息',
         icon: 'icon-organization',
         chidren: null,
       },
       {
-        path: '/system/project',
+        path: '/control/project',
         name: '项目管理',
         icon: 'icon-project',
         chidren: null,
       },
       {
-        path: '/system/application',
+        path: '/control/application',
         name: '应用管理',
-        icon: 'icon-Application',
+        icon: 'icon-application',
         chidren: null,
       },
       {
-        path: '/system/server',
+        path: '/control/store',
+        name: '仓库管理',
+        icon: 'icon-store',
+        chidren: [
+          {
+            path: '/control/store/code',
+            name: '代码库',
+            icon: 'icon-code',
+            chidren: null,
+          },
+        ],
+      },
+      {
+        path: '/control/server',
         name: '服务器管理',
         icon: 'icon-server',
         chidren: null,
