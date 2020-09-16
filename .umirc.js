@@ -64,4 +64,5 @@ export default {
   request: {
     dataField: 'result',
   },
+  favicon: '/assets/favicon.ico',
 };
