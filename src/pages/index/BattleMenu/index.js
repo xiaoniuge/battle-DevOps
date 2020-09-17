@@ -157,9 +157,15 @@ const menuData = [
     chidren: [
       {
         path: '/control/organization',
-        name: '组织信息',
+        name: '组织管理',
         icon: 'icon-organization',
-        chidren: null,
+        chidren: [
+          {
+            path: '/control/organization/establish',
+            name: '组织架构',
+            icon: 'icon-organization-structure',
+          },
+        ],
       },
       {
         path: '/control/project',

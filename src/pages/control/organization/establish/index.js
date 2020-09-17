@@ -29,7 +29,12 @@ export default (props) => {
         </Space>
       </Row>
       <div style={{ position: 'relative', paddingLeft: 32 }}>
-        <Tree data={data} />
+        <Tree
+          data={data}
+          onEdit={() => console.log('edit')}
+          onCreate={() => console.log('create')}
+          onDelete={() => console.log('delete')}
+        />
       </div>
     </>
   );

@@ -1,4 +1,4 @@
-import { Input } from 'antd';
+import { Input, Select } from 'antd';
 
 const columnsConfig = [
   {
@@ -11,6 +11,12 @@ const columnsConfig = [
     dataIndex: 'name',
     key: 'name',
     component: <Input />,
+  },
+  {
+    title: '所属组织',
+    dataIndex: 'organizationId',
+    key: 'organizationId',
+    component: <Select />,
   },
   {
     title: '项目描述',

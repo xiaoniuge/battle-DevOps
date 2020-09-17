@@ -27,8 +27,14 @@ export default {
             },
             {
               path: '/control/organization',
-              component: '@/pages/control/organization/index',
               title: '组织管理',
+              routes: [
+                {
+                  path: '/control/organization/establish',
+                  component: '@/pages/control/organization/establish/index',
+                  title: '组织架构',
+                },
+              ],
             },
             {
               path: '/control/project',

@@ -34,8 +34,9 @@ export default (props) => {
   const [breadcrumbs, setBreadcrumbs] = useState();
   const [currentSelectedKey, setCurrentSelectedKey] = useState();
 
-  const menuSelectedHandler = (key) => {
-    setCurrentSelectedKey(key);
+  const menuSelectedHandler = (route) => {
+    setCurrentSelectedKey(route.path);
+    setCurrentMenuTitle(route.breadcrumbName);
   };
   return (
     <Layout style={{ minHeight: window.innerHeight }}>
@@ -103,7 +104,7 @@ export default (props) => {
                     {route.breadcrumbName}
                   </Space>
                 ) : (
-                  <Link to={route.path} onClick={() => menuSelectedHandler(route.path)}>
+                  <Link to={route.path} onClick={() => menuSelectedHandler(route)}>
                     <Space>
                       <MyIcon type={route.icon} />
                       {route.breadcrumbName}
