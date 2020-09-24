@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu } from 'antd';
-import { MyIcon } from '@/component';
+import { Icon } from 'battle-library';
 
 const { SubMenu } = Menu;
 
@@ -26,7 +26,7 @@ export default ({
       <SubMenu
         key={item.path}
         title={item.name}
-        icon={<MyIcon type={item.icon} style={{ color: 'white' }} />}
+        icon={<Icon type={item.icon} style={{ color: 'white' }} />}
       >
         {item.chidren.map((subItem) => {
           if (subItem.chidren) {
@@ -43,7 +43,7 @@ export default ({
       <Menu.Item
         key={item.path}
         title={item.name}
-        icon={<MyIcon type={item.icon} style={{ color: 'white' }} />}
+        icon={<Icon type={item.icon} style={{ color: 'white' }} />}
       >
         <Link to={item.path}>{item.name}</Link>
       </Menu.Item>

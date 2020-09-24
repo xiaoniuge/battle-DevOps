@@ -2,7 +2,7 @@ import { useState } from 'react';
 import styles from './index.scss';
 import { Form, Input, Button, message, Checkbox } from 'antd';
 import { history } from 'umi';
-import { MyIcon } from '@/component';
+import { Icon } from 'battle-library';
 
 export default (props) => {
   const [usernameStatus, setUsernameStatus] = useState('warning');
@@ -39,7 +39,7 @@ export default (props) => {
               bordered={false}
               onChange={() => setUsernameStatus('validating')}
               onBlur={() => setUsernameStatus('success')}
-              prefix={<MyIcon type={'icon-user'} style={{ color: '#1890ff' }} />}
+              prefix={<Icon type={'icon-user'} style={{ color: '#1890ff' }} />}
             />
           </Form.Item>
         </div>
@@ -50,7 +50,7 @@ export default (props) => {
               bordered={false}
               onChange={() => setPasswordStatus('validating')}
               onBlur={() => setPasswordStatus('success')}
-              prefix={<MyIcon type={'icon-password'} style={{ color: '#1890ff' }} />}
+              prefix={<Icon type={'icon-password'} style={{ color: '#1890ff' }} />}
             />
           </Form.Item>
         </div>

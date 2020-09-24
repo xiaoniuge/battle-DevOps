@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Table } from '@/component';
+import { TablePro } from 'battle-library';
 import { columnsConfig } from './config';
 
 export default (props) => {
@@ -8,7 +8,7 @@ export default (props) => {
   const [drawerTitle, setDrawerTitle] = useState('创建应用');
   return (
     <>
-      <Table
+      <TablePro
         columns={columnsConfig}
         initialValues={{}}
         needSearch={true}
@@ -23,7 +23,7 @@ export default (props) => {
         drawerFooterVisible={drawerFooterVisible}
         drawerWidth={600}
         onSearch={(values) => console.log(values)}
-        onCreateClick={() => {
+        onCreateButtonClick={() => {
           setDrawerVisible(true);
           setDrawerFooterVisible(true);
           setDrawerTitle('创建应用');

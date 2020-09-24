@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Space, Row, Tooltip } from 'antd';
-import { MyIcon } from '@/component';
+import { Icon } from 'battle-library';
 
 export default ({ data = [], onEdit, onCreate, onDelete }) => {
   const [realData, setRealData] = useState([]);
@@ -8,13 +8,13 @@ export default ({ data = [], onEdit, onCreate, onDelete }) => {
     return item.showActions ? (
       <Space>
         <Tooltip title="编辑" destroyTooltipOnHide={{ keepParent: false }}>
-          <MyIcon type="icon-edit" onClick={() => onEdit(item)} />
+          <Icon type="icon-edit" onClick={() => onEdit(item)} />
         </Tooltip>
         <Tooltip title="创建子节点" destroyTooltipOnHide={{ keepParent: false }}>
-          <MyIcon type="icon-plus" onClick={() => onCreate(item)} />
+          <Icon type="icon-plus" onClick={() => onCreate(item)} />
         </Tooltip>
         <Tooltip title="删除" destroyTooltipOnHide={{ keepParent: false }}>
-          <MyIcon type="icon-delete" onClick={() => onDelete(item)} />
+          <Icon type="icon-delete" onClick={() => onDelete(item)} />
         </Tooltip>
       </Space>
     ) : null;
@@ -40,7 +40,7 @@ export default ({ data = [], onEdit, onCreate, onDelete }) => {
         }}
       >
         <Space>
-          <MyIcon
+          <Icon
             type={item.icon}
             style={{
               fontSize: 32,
@@ -92,21 +92,21 @@ export default ({ data = [], onEdit, onCreate, onDelete }) => {
             current && current.value === item.value
               ? current.collapsed
               : item.collapsed !== undefined && item.collapsed !== null
-              ? item.collapsed
-              : true,
+                ? item.collapsed
+                : true,
           children: treeDataHandler(item.children, current),
           icon:
             current && current.value === item.value
               ? current.icon
               : item.icon
-              ? item.icon
-              : 'icon-arrow-left',
+                ? item.icon
+                : 'icon-arrow-left',
           showActions:
             current && current.value === item.value
               ? current.showActions
               : item.showActions
-              ? item.showActions
-              : false,
+                ? item.showActions
+                : false,
         });
       } else {
         tmp.push({
@@ -118,8 +118,8 @@ export default ({ data = [], onEdit, onCreate, onDelete }) => {
             current && current.value === item.value
               ? current.showActions
               : item.showActions
-              ? item.showActions
-              : false,
+                ? item.showActions
+                : false,
         });
       }
     }

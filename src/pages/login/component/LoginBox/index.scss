@@ -1,37 +1,38 @@
 .login {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 300px;
-  height: 320px;
-  border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 320px;
+    border-radius: 16px;
 }
 
 .footer {
-  margin-top: 16px;
-  padding-bottom: 8px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  span {
-    color: #1890ff;
-    cursor: pointer;
-  }
+    margin-top: 16px;
+    padding-bottom: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    span {
+        color: #1890ff;
+        cursor: pointer;
+    }
 }
 
 .loginTitle {
-  font-weight: bold;
-  text-align: center;
-  width: 100%;
-  padding-bottom: 24px;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    padding-bottom: 24px;
 }
 
 .inputBox {
-  background: #e6f7ff;
-  border-radius: 16px;
+    background: #e6f7ff;
+    border-radius: 16px;
 }
 
 .checkboxBox {
-  padding-left: 8px;
+    padding-left: 8px;
 }

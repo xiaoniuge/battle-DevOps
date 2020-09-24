@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Layout, PageHeader, Space, Avatar, Dropdown, Menu, Card } from 'antd';
+import { Icon } from 'battle-library';
 import { Link } from 'react-router-dom';
-import MyIcon from '@/component/MyIcon';
 import BattleMenu from './BattleMenu';
 import styles from './index.scss';
 import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
@@ -70,11 +70,11 @@ export default (props) => {
               onClick={() => setCollapsed(false)}
             />
           ) : (
-            <MenuFoldOutlined
-              className={styles.header_menu_fold}
-              onClick={() => setCollapsed(true)}
-            />
-          )}
+              <MenuFoldOutlined
+                className={styles.header_menu_fold}
+                onClick={() => setCollapsed(true)}
+              />
+            )}
           <Space>
             <Dropdown overlay={userMenu}>
               <Space style={{ cursor: 'pointer' }}>
@@ -92,40 +92,40 @@ export default (props) => {
               routes: breadcrumbs
                 ? breadcrumbs[window.location.pathname.replace('/', '')]
                   ? [{ path: '/home', breadcrumbName: '首页', icon: 'icon-home' }].concat(
-                      breadcrumbs[window.location.pathname.replace('/', '')],
-                    )
+                    breadcrumbs[window.location.pathname.replace('/', '')],
+                  )
                   : [{ path: '/home', breadcrumbName: '首页', icon: 'icon-home' }]
                 : [{ path: '/home', breadcrumbName: '首页', icon: 'icon-home' }],
               itemRender: (route, params, routes, paths) => {
                 const last = routes.indexOf(route) === routes.length - 1;
                 return last ? (
                   <Space>
-                    <MyIcon type={route.icon} />
+                    <Icon type={route.icon} />
                     {route.breadcrumbName}
                   </Space>
                 ) : (
-                  <Link to={route.path} onClick={() => menuSelectedHandler(route)}>
-                    <Space>
-                      <MyIcon type={route.icon} />
-                      {route.breadcrumbName}
-                    </Space>
-                  </Link>
-                );
+                    <Link to={route.path} onClick={() => menuSelectedHandler(route)}>
+                      <Space>
+                        <Icon type={route.icon} />
+                        {route.breadcrumbName}
+                      </Space>
+                    </Link>
+                  );
               },
             }}
           />
           <div style={{ padding: 16 }}>
             {props.location.pathname.indexOf('/dashboard') !== -1 ||
-            props.location.pathname === '/home' ? (
-              props.children
-            ) : (
-              <Card
-                className={styles.layoutContent}
-                bodyStyle={{ minHeight: window.innerHeight - 220 }}
-              >
-                {props.children}
-              </Card>
-            )}
+              props.location.pathname === '/home' ? (
+                props.children
+              ) : (
+                <Card
+                  className={styles.layoutContent}
+                  bodyStyle={{ minHeight: window.innerHeight - 220 }}
+                >
+                  {props.children}
+                </Card>
+              )}
           </div>
         </Content>
       </Layout>

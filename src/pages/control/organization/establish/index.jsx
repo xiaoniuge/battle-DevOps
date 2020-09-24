@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Space, Row, Tooltip } from 'antd';
 import { Tree } from './component';
-import { MyIcon } from '@/component';
+import { Icon } from 'battle-library';
 
 export default (props) => {
   const [company, setComany] = useState({ name: '晓菲戈俱乐部' });
@@ -19,12 +19,12 @@ export default (props) => {
         }}
       >
         <Space>
-          <MyIcon type="icon-company" style={{ color: '#08979c', fontSize: 32 }} />
+          <Icon type="icon-company" style={{ color: '#08979c', fontSize: 32 }} />
           <span>{company.name}</span>
         </Space>
         <Space>
           <Tooltip title="创建子节点" destroyTooltipOnHide={{ keepParent: false }}>
-            <MyIcon type="icon-plus" onClick={() => onCreate()} />
+            <Icon type="icon-plus" onClick={() => onCreate()} />
           </Tooltip>
         </Space>
       </Row>
